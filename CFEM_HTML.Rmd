@@ -454,7 +454,6 @@ hnp( lnmod3$residuals , sim = 99 , resid.type =" deviance " ,
 
 
 
-
 \newpage
 
 O interesse é saber qual o percentual para as categorias da variável unidade da federação e distribuidor  foram afetados. 
