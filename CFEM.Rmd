@@ -528,14 +528,14 @@ O interesse é saber qual o percentual para as categorias da variável unidade d
 ```{r fig.width = 8, fig.height = 3.5}
 base1$UF[base1$UF == "A_MG"] <- "MG"
 base1 %>% group_by(UF) %>% summarise(Total = n()) %>% 
-ggplot(aes(x = UF, y = Total)) + geom_col(fill="#FF6666",position = "dodge")+   
+ggplot(aes(x = fct_reorder(UF, Total, .desc = TRUE), y = Total)) + geom_col(fill="#FF6666",position = "dodge")+   
 geom_text(aes(label = Total), vjust = 1,size = 2) + theme_bw() + 
 labs(title = "Total de municípios  analisado por Estado. 2015-2020. 
      Antes do ajuste do intervalo ", x = " ",y = "Total")
 
 base2$UF[base2$UF == "A_MG"] <- "MG"
 base2 %>% group_by(UF) %>% summarise(Total = n()) %>% 
-ggplot(aes(x = UF, y = Total)) + geom_col(fill="#FF6666",position = "dodge")+   
+ggplot(aes(x = fct_reorder(UF, Total, .desc = TRUE), y = Total)) + geom_col(fill="#FF6666",position = "dodge")+   
 geom_text(aes(label = Total), vjust = 1,size = 2) + theme_bw() + 
 labs(title = "Total de municípios  analisado por Estado. 2015-2020. 
      Após o ajuste do intervalo ", x = " ",y = "Total")
